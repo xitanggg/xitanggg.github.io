@@ -1,0 +1,14 @@
+-----Engineering Projects
+ECE 5725 Autonomous Object Tracking Turret (https://courses.cit.cornell.edu/ece5990/ECE5725_Spring2018_Projects/fy57_xz522_AutoTurret/index.html)
+ECE 5760 Digit recognition (https://people.ece.cornell.edu/land/courses/ece5760/FinalProjects/s2018/vr236_xz522/vr236_xz522/vr236_xz522/index.html)
+ECE 4760 Waterfall (http://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/xz522_ll772/xz522_ll772/xz522_ll772/index.html)
+ECE 3400 robot (https://carolinechuu.github.io/ECE-3400-Team-12/index.html)
+Jaundice therapy device
+ECE 3140 Robot mouse ()
+
+-----Personal Projects
+Street Workout
+Robo Wunderkind
+Engraved LED Plate
+American Dream From Scratch
+World Funky Product Exploration

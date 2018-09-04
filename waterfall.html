@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Xitang - Beautiful Interactive Waterfall</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+		<link rel="shortcut icon" href="images/logo_x.ico">
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<div class="inner">
+						<!-- Logo -->
+							<a href="index.html" class="logo">
+								<span class="symbol">
+									<img src="images/my_x.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_i2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_t2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_a2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_n2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_g2.svg" alt="" style="display:inline-block;"/>
+								</span>
+							</a>
+
+						<!-- Nav -->
+							<nav>
+								<ul>
+									<li><a href="#menu">Menu</a></li>
+								</ul>
+							</nav>
+
+					</div>
+				</header>
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h3>Beautiful Interactive Waterfall</h3>
+							<ul>
+								<li>I made a Beautiful Interactive Waterfall with my lab partner Henry for final project of ECE 4760
+									“Digital Systems Design Using Microcontrollers” in Fall 2017.</li>
+								<li>The description of this page is still under development, please check back other time. Thanks.</li>
+								<li>More information can be found in the project final report website:
+									<a href="https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/xz522_ll772/xz522_ll772/xz522_ll772/index.html">Link Click Here</a>.</li>
+							</ul>
+
+							<div style="position:relative;height:0;padding-bottom:48%"><iframe src="https://www.youtube.com/embed/1HuUkSpbhO0?list=PLKcjQ_UFkrd7JYi9yO2zcU4sMUj3x_pOL&amp;ecver=2" style="position:absolute;width:100%;height:100%;left:0" width="750" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+							<br/><br/>
+							<p class="typewrite">
+								<a class="typewrite" data-period="2000" data-type='
+								[
+								"There is always a better way to do things.",
+								"I feel mad excited to accelerate our world toward a happier tomorrow.",
+								"Accessible empowerment is the future.",
+								"I am truly grateful for everything I have.",
+								"Let us move faster.",
+								"I live in the field of product innovation, design, development and deployment." ]'>
+								</a>
+							</p>
+						</div>
+
+
+					</div>
+
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="inner">
+								<ul class="copyright">
+									<li>&copy; Xitang. No rights reserved</li><li>Design framework based off <a href="http://html5up.net">HTML5 UP</a></li>
+								</ul>
+
+							</div>
+						</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<!-- script borrow from GEOFF GRAHAM
+			https://css-tricks.com/snippets/css/typewriter-effect/-->
+			<script>
+				var TxtType = function(el, toRotate, period) {
+					this.toRotate = toRotate;
+					this.el = el;
+					this.loopNum = 0;
+					this.period = parseInt(period, 10) || 2000;
+					this.txt = '';
+					this.tick();
+					this.isDeleting = false;
+				};
+
+				TxtType.prototype.tick = function() {
+					var i = this.loopNum % this.toRotate.length;
+					var fullTxt = this.toRotate[i];
+
+					if (this.isDeleting) {
+					this.txt = fullTxt.substring(0, this.txt.length - 1);
+					} else {
+					this.txt = fullTxt.substring(0, this.txt.length + 1);
+					}
+
+					this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+					var that = this;
+					var delta = 200 - Math.random() * 100;
+
+					if (this.isDeleting) { delta /= 2; }
+
+					if (!this.isDeleting && this.txt === fullTxt) {
+					delta = this.period;
+					this.isDeleting = true;
+					} else if (this.isDeleting && this.txt === '') {
+					this.isDeleting = false;
+					this.loopNum++;
+					delta = 500;
+					}
+
+					setTimeout(function() {
+					that.tick();
+					}, delta);
+				};
+				window.onload = function() {
+						var elements = document.getElementsByClassName('typewrite');
+						for (var i=0; i<elements.length; i++) {
+								var toRotate = elements[i].getAttribute('data-type');
+								var period = elements[i].getAttribute('data-period');
+								if (toRotate) {
+									new TxtType(elements[i], JSON.parse(toRotate), period);
+								}
+						}
+						// INJECT CSS
+						var css = document.createElement("style");
+						css.type = "text/css";
+						css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+						document.body.appendChild(css);
+				};
+			</script>
+	</body>
+</html>

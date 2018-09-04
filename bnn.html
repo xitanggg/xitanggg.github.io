@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Xitang - Binarized Neural Network for Digit Recognition on FPGA</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+		<link rel="shortcut icon" href="images/logo_x.ico">
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<div class="inner">
+						<!-- Logo -->
+							<a href="index.html" class="logo">
+								<span class="symbol">
+									<img src="images/my_x.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_i2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_t2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_a2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_n2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_g2.svg" alt="" style="display:inline-block;"/>
+								</span>
+							</a>
+
+						<!-- Nav -->
+							<nav>
+								<ul>
+									<li><a href="#menu">Menu</a></li>
+								</ul>
+							</nav>
+
+					</div>
+				</header>
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h3>Binarized Neural Network for Digit Recognition on FPGA</h3>
+							<ul>
+								<li>My lab partner Vidya and I made an Binarized Neural Network for Digit Recognition on FPGA for
+									final project of ECE 5760 “Advanced Microcontroller Design and System On Chip” in Spring 2018.</li>
+								<li>A Binarized Neural Network is a special type of Convolutional Neural Network, which is a machine
+									learning model based on the neural networks of the human brain and has extensive uses in image
+									classification. We coded the Binarized Neural Network in System Verilog on Intel DE1-SoC board
+									and the Binarized Neural Network consists of two convolutional layers, two pooling layers, and
+									two fully connected layers.</li>
+								<li>When inputted with a 7 by 7 two bit black and white image, the Binarized Neural Network on FPGA
+									can make inference and classify what number is the input image in 4us, which takes far less time than
+									the same implementation running Python on a PC (>40us or at least 10 times longer). This hardware acceleration is the result of our
+									parallel calculation algorithm in FPGA. Another advantage of running Binarized Neural Network
+									on FPGA hardware is that it guarantees meeting real time deadline, whereas a typical program running
+									in operating system is usually not real time.</li>
+								<li>More information can be found in the project final report website:
+									<a href="https://people.ece.cornell.edu/land/courses/ece5760/FinalProjects/s2018/vr236_xz522/vr236_xz522/vr236_xz522/index.html">Link Click Here</a>.</li>
+							</ul>
+
+							<div style="position:relative;height:0;padding-bottom:56.24%"><iframe src="https://www.youtube.com/embed/OIkAZBkXz3U?ecver=2" style="position:absolute;width:100%;height:100%;left:0" width="640" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+							<br/><br/>
+							<p class="typewrite">
+								<a class="typewrite" data-period="2000" data-type='
+								[
+								"There is always a better way to do things.",
+								"I feel mad excited to accelerate our world toward a happier tomorrow.",
+								"Accessible empowerment is the future.",
+								"I am truly grateful for everything I have.",
+								"Let us move faster.",
+								"I live in the field of product innovation, design, development and deployment." ]'>
+								</a>
+							</p>
+						</div>
+
+
+					</div>
+
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="inner">
+								<ul class="copyright">
+									<li>&copy; Xitang. No rights reserved</li><li>Design framework based off <a href="http://html5up.net">HTML5 UP</a></li>
+								</ul>
+
+							</div>
+						</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<!-- script borrow from GEOFF GRAHAM
+			https://css-tricks.com/snippets/css/typewriter-effect/-->
+			<script>
+				var TxtType = function(el, toRotate, period) {
+					this.toRotate = toRotate;
+					this.el = el;
+					this.loopNum = 0;
+					this.period = parseInt(period, 10) || 2000;
+					this.txt = '';
+					this.tick();
+					this.isDeleting = false;
+				};
+
+				TxtType.prototype.tick = function() {
+					var i = this.loopNum % this.toRotate.length;
+					var fullTxt = this.toRotate[i];
+
+					if (this.isDeleting) {
+					this.txt = fullTxt.substring(0, this.txt.length - 1);
+					} else {
+					this.txt = fullTxt.substring(0, this.txt.length + 1);
+					}
+
+					this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+					var that = this;
+					var delta = 200 - Math.random() * 100;
+
+					if (this.isDeleting) { delta /= 2; }
+
+					if (!this.isDeleting && this.txt === fullTxt) {
+					delta = this.period;
+					this.isDeleting = true;
+					} else if (this.isDeleting && this.txt === '') {
+					this.isDeleting = false;
+					this.loopNum++;
+					delta = 500;
+					}
+
+					setTimeout(function() {
+					that.tick();
+					}, delta);
+				};
+				window.onload = function() {
+						var elements = document.getElementsByClassName('typewrite');
+						for (var i=0; i<elements.length; i++) {
+								var toRotate = elements[i].getAttribute('data-type');
+								var period = elements[i].getAttribute('data-period');
+								if (toRotate) {
+									new TxtType(elements[i], JSON.parse(toRotate), period);
+								}
+						}
+						// INJECT CSS
+						var css = document.createElement("style");
+						css.type = "text/css";
+						css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+						document.body.appendChild(css);
+				};
+			</script>
+	</body>
+</html>
