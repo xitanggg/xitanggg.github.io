@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="my_x" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="150px" height="170px" viewBox="0 0 149.167 172.243" enable-background="new 0 0 149.167 172.243"
+	 xml:space="preserve">
+<polygon fill="#585858" points="149.167,129.183 74.583,172.243 0,129.183 0,43.061 74.583,0 149.167,43.061 ">
+
+	<animateTransform
+	   attributeName="transform"
+	   attributeType="XML"
+	   type="rotate"
+	   from="0 75 75"
+	   to="360 75 75"
+	   dur="2s"
+	   begin="0s; 5s; 9s; 17s;"
+	   end="2s; 8s; 15s; 25s;"
+	   fill="freeze"
+	   restart="whenNotActive"
+	   />
+</polygon>
+</svg>

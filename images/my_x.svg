@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="my_x" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		width = "149.167" height = "172.243"
+		viewBox="0 0 149.167 172.243" enable-background="new 0 0 149.167 172.243"
+	 xml:space="preserve">
+
+	 <g>
+<polygon fill="#7ecaf6" points="149.167,129.183 74.583,172.243 0,129.183 0,43.061 74.583,0 149.167,43.061 ">
+
+
+</polygon>
+<text transform="matrix(1 0 0 1 40.563 126.509)" fill="#FFFFFF"
+ font-family="'Source Sans Pro'" font-size="120" font-weight="bold">X
+</text>
+<animateTransform
+	 id="id1"
+	 attributeName="transform"
+	 attributeType="XML"
+	 type="rotate"
+	 from="0 74.584 86.121"
+	 to="90 74.584 86.121"
+	 dur="2s"
+	 begin="4;id1.end+12;"
+	 fill="freeze"
+	 />
+
+	 <animateTransform
+		 id="id2"
+	 	 attributeName="transform"
+	 	 attributeType="XML"
+	 	 type="rotate"
+	 	 from="90 74.584 86.121"
+	 	 to="180 74.584 86.121"
+	 	 dur="2s"
+		 begin="10;id2.end+12;"
+	 	 fill="freeze"
+	 	 />
+</g>
+
+</svg>
