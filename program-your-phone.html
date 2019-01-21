@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Xitang - "Program Your Phone" App</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+		<link rel="shortcut icon" href="images/logo_x.ico">
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<div class="inner">
+						<!-- Logo -->
+							<a href="index.html" class="logo">
+								<span class="symbol">
+									<img src="images/my_x.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_i2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_t2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_a2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_n2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_g2.svg" alt="" style="display:inline-block;"/>
+								</span>
+							</a>
+
+						<!-- Nav -->
+							<nav>
+								<ul>
+									<li><a href="#menu">Menu</a></li>
+								</ul>
+							</nav>
+
+					</div>
+				</header>
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h3>"Program Your Phone" App</h3>
+							<p class="biao-ti">Background</p>
+							<p>In summer 2017, I was working at <a href="https://www.robowunderkind.com/">Robo Wunderkind</a> thanks to the generous support of the
+								<a href="https://www.engineering.cornell.edu/students/undergraduate-students/entrepreneurial-options-undergrad-students/kessler-fellows-program">Cornell Kessler Fellows Program</a>.
+								Robo Wunderkind is
+								an awesome EdTech startup that embeds electronics into modular blocks so kids or anyone can simply
+								snap together blocks and program in an intuitive app to create many things. Inspired by Robo Wunderkind’s
+								vision to make engineering accessible across age and background, I thought of the fact that our phone is
+								a good piece of hardware with plenty of hardware functionalities. Together with my friend
+								<a href="https://www.linkedin.com/in/yuteng-mei-753287127">Yuteng</a>,
+								in winter 2018, we started building an app “Program Your Phone” that allows kids or teens or anyone to
+								program their phones to do a lot of things by leaverging phone’s built-in hardware functionalities.
+								Examples of things people can built with the app are intruder alarm, metal detector, image slideshow, home monitor...</p>
+							<br/>
+							<p>We made the below video to compete for the 2018 Lightspeed Summer Fellowship. The video compares using
+								the Program Your Phone App vs using the <a href="https://www.arduino.cc/">Arduino (a widely used electronic prototyping platform)</a>
+								to build
+								various things to show the intuitiveness and easiness of the App. For example, to make a blinking
+								flashlight, the Arduino demands knowledge of hardware set up and C programming while the App only
+								requires dragging and dropping five icons.</p>
+							<div style="position:relative;height:0;padding-bottom:56.21%"><iframe src="https://drive.google.com/file/d/1k1uqzojcWoT_rHTg_4KJhCMnZfbt-4FN/preview" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+
+							<br/>
+							<p class="biao-ti">Design and Development</p>
+							<p>Yuteng and I spent roughly two weeks building the first version of the app. First, we brainstormed and
+								layed out the design and framework of the app. We thought of a two panels design: a control panel and
+								a programming panel. The control panel contains pre-built Actions and Triggers where users can simply
+								drag and drop to the Programming Panel to create their inventions. For example, an user drags a
+								“Flashlight On” Action from the Control Panel to State 1 - Action 1 of the Programming Panel. Once
+								user clicks Start Button, the program will execute in order of states. In each state, it will perform
+								all the actions of the given state. In State 1, there is a “Flashlight On” Action Icon, so starting
+								this piece of code would turn on the flashlight of the mobile device.</p>
+							<div class="box alt">
+								<div class="row uniform">
+									<div class="4u"><span class="image fit"><img src="images/program-your-phone/design1.png" alt="" /></span></div>
+									<div class="4u"><span class="image fit"><img src="images/program-your-phone/design2.png" alt="" /></span></div>
+								</div>
+							</div>
+
+							<p>Then we divided and conquered in building this app, Yuteng on the front end and I on the back end.
+							Below, the left video shows Yuteng’s front end work of making the two panels and the drag drop functionality.
+							The right video shows my back end work of extracting the hardware capability of a phone - flashlight, vibration,
+							sound, image display, timer, accelerometer, distance sensor… Yuteng also built the data structure for
+							actions/triggers and I also wrote the background thread that executes the actions/triggers program in order.
+							Then we met up at the library and integrated the front end with the back end. </p>
+							<div style="position:relative;height:0;padding-bottom:28.11%">
+								<iframe src="https://drive.google.com/file/d/1XRF3FDgoYTmcMrk3L-bZmbY_7KSPT2vc/preview" style="position:absolute;width:45%;height:90%;left:0" width="641" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+								<iframe src="https://drive.google.com/file/d/1evJUUBiQxzqB9LQKcjJ_fWoQkKkej5XY/preview" style="position:absolute;width:45%;height:90%;left:50%" width="641" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+							</div>
+							<p>Finally, I spent another day
+							or two to design some icons using adobe illustrator and to finalize some colors after experimentation.
+							And we made the first version of the app as shown at the top first video.</p>
+							<div class="box alt">
+								<div class="row uniform">
+									<div class="12u$"><span class="image fit"><img src="images/program-your-phone/icon.png" alt="" /></span></div>
+								</div>
+							</div>
+
+							<p class="biao-ti">Result and Reflection</p>
+							<p>We successfully created an up and running first version of the app with 4 actions (flashlight,
+								vibration, music, image) and 4 triggers (countdown timer, accelerometer to detect shake, distance
+								sensor to detect object in front, light sensor to detect light level). Still, there are many more
+								actions (text screen, camera, phone call, message…) and triggers (microphone, gps, magnetometer,
+								temperature, gyroscope, humility…) that we would need to work on. </p>
+							<br/>
+							<p>We didn’t make it to the 2018 Lightspeed Summer Fellowship. One of our weakness is that we never got
+								a chance to test this with our users - kids and teens - to get their feedback on the design. And
+								while our idea is exciting, it is more mission driven than financial driven, definitely not the
+								most lucrative ones of the application pool. Regardless, I am still 100% in for the vision of our
+								product, which is to make engineering accessible across age and background. As someone who wasn’t
+								exposed to the magic world of engineering until sophomore year of college, I see countless similar
+								myself out there that simply lacks the tool to experience the engineering field. And this App seeks
+								to serve the need and bridge the gap. I will definitely continue working on this App, test with users, put it on App
+								store and make it public one day.</p>
+							<br/>
+							<p>We also received the following advice from Lightspeed “What I can recommend is that if you are
+								interested in entrepreneurship – and I mean truly committed to the career path – is that you read
+								three things: 1) “Give and Take”, 2) Steve Blank’s book “The Startup Manual” and 3) “Do More, Faster”
+								by Brad Feld.” On top of this, I would also suggest
+								<a href="https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898">Eric Ries’s book “The Lean Startup”</a>,
+								AMAZING book that provides the framework to create valuable product/service and the know-how to test hypothesis scientifically.</p>
+							<br/><br/>
+							<p class="typewrite">
+								<a class="typewrite" data-period="2000" data-type='
+								[
+								"There is always a better way to do things.",
+								"I feel mad excited to accelerate our world toward a happier tomorrow.",
+								"Accessible empowerment is the future.",
+								"I am truly grateful for everything I have.",
+								"Let us move faster.",
+								"I live in the field of product innovation, design, development and deployment." ]'>
+								</a>
+							</p>
+						</div>
+
+
+					</div>
+
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="inner">
+								<ul class="copyright">
+									<li>&copy; Xitang. No rights reserved</li><li>Design framework based off <a href="http://html5up.net">HTML5 UP</a></li>
+								</ul>
+
+							</div>
+						</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<!-- script borrow from GEOFF GRAHAM
+			https://css-tricks.com/snippets/css/typewriter-effect/-->
+			<script>
+				var TxtType = function(el, toRotate, period) {
+					this.toRotate = toRotate;
+					this.el = el;
+					this.loopNum = 0;
+					this.period = parseInt(period, 10) || 2000;
+					this.txt = '';
+					this.tick();
+					this.isDeleting = false;
+				};
+
+				TxtType.prototype.tick = function() {
+					var i = this.loopNum % this.toRotate.length;
+					var fullTxt = this.toRotate[i];
+
+					if (this.isDeleting) {
+					this.txt = fullTxt.substring(0, this.txt.length - 1);
+					} else {
+					this.txt = fullTxt.substring(0, this.txt.length + 1);
+					}
+
+					this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+					var that = this;
+					var delta = 200 - Math.random() * 100;
+
+					if (this.isDeleting) { delta /= 2; }
+
+					if (!this.isDeleting && this.txt === fullTxt) {
+					delta = this.period;
+					this.isDeleting = true;
+					} else if (this.isDeleting && this.txt === '') {
+					this.isDeleting = false;
+					this.loopNum++;
+					delta = 500;
+					}
+
+					setTimeout(function() {
+					that.tick();
+					}, delta);
+				};
+				window.onload = function() {
+						var elements = document.getElementsByClassName('typewrite');
+						for (var i=0; i<elements.length; i++) {
+								var toRotate = elements[i].getAttribute('data-type');
+								var period = elements[i].getAttribute('data-period');
+								if (toRotate) {
+									new TxtType(elements[i], JSON.parse(toRotate), period);
+								}
+						}
+						// INJECT CSS
+						var css = document.createElement("style");
+						css.type = "text/css";
+						css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+						document.body.appendChild(css);
+				};
+			</script>
+	</body>
+</html>

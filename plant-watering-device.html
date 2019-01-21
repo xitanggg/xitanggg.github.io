@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Xitang - Plant Watering Device</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+		<link rel="shortcut icon" href="images/logo_x.ico">
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<div class="inner">
+						<!-- Logo -->
+							<a href="index.html" class="logo">
+								<span class="symbol">
+									<img src="images/my_x.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_i2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_t2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_a2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_n2.svg" alt="" style="display:inline-block;"/>
+									<img src="images/my_g2.svg" alt="" style="display:inline-block;"/>
+								</span>
+							</a>
+
+						<!-- Nav -->
+							<nav>
+								<ul>
+									<li><a href="#menu">Menu</a></li>
+								</ul>
+							</nav>
+
+					</div>
+				</header>
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h3>Plant Watering Device</h3>
+							<p class="biao-ti">Background</p>
+							<p>My roommate and I were out of town for a few weeks for winter break. Before we left for break,
+								my roommate was concerned that our cute house plant would die from dehydration. As a product engineer,
+								I would not let this happen. So the night before I headed out to Toronto, I rapidly built a Plant
+								Watering Device that could automatically water our plant every 1.5 days.</p>
+							<div style="position:relative;height:0;padding-bottom:56.21%"><iframe src="https://www.youtube.com/embed/iaKVMeCtplQ" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+
+							<br/>
+							<p class="biao-ti">Design and Development</p>
+							<p>The Plant Watering Device contains a <a href="https://www.amazon.com/s/ref=nb_sb_ss_c_1_7?url=search-alias%3Daps&field-keywords=raspberry+pi+3+b%2B&sprefix=raspber%2Caps%2C150&crid=19W6MQZ3WLKYK">Raspberry Pi 3 Model B+ </a> mini computer
+								and an <a href="https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=air+pump+motor">air pump motor</a>.
+								Every 1.5 days, the mini computer would turn on the air pump that pumps air into the water tank for 2 seconds
+								through a <a href="https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=vinyl+tube">vinyl tube</a>.
+								There is another vinyl tube with one side submerged into the water tank and the other
+								side sit on the Plant Frame facing down the plant. When air enters the water tank, air tries to escape and
+								pushes the water out to water the plant.</p>
+							<br/>
+							<div class="block">
+							<p class="vertical-center"><span class="image left"><img src="images/plant-watering-device/plant-frame-sketch.jpg" alt="" /></span> For the mechanical side, I designed a Plant Frame to mount the vinyl tube. I first brainstormed and
+								sketched out a Plant Frame design on whiteboard, then added the exact dimensions after measuring the
+								size of our house plant. </p>
+							</div>
+							<br/>
+							<p>Because I started making the design the night before I left for break, I didn’t have much time and decided
+								the fastest way to make the Plant Frame is laser-cutting the parts and connecting them together.
+								I created 4 unique parts files in Solidworks and modeled the assembly design. <a href="https://github.com/xitanggg/Plant-Watering-Device">These files can be found at this link.</a>
+								The model looked fit and great so I exported the parts as dxf files for laser-cutting acrylic and then assembled them. </p>
+								<div class="box alt">
+									<div class="row uniform">
+										<div class="4u"><span class="image fit"><img src="images/plant-watering-device/plant-watering-device.png" alt="" /></span></div>
+										<div class="4u"><span class="image fit"><img src="images/plant-watering-device/plant-frame-parts.jpg" alt="" /></span></div>
+										<div class="4u$"><span class="image fit"><img src="images/plant-watering-device/plant-frame-assem.jpg" alt="" /></span></div>
+									</div>
+								</div>
+							<p><span class="image right"><img src="images/plant-watering-device/plant-watering-device-fritzing.png" alt="" /></span>
+								For the electrical side, the essential part is the motor driver circuit, the set up where the
+								Raspberry Pi interacts with the air pump motor. The motor driver circuit contains a 1N4001 diode,
+								an air pump motor, two 2N2222 NPN BJT transistors and two 330 ohm resistors. The air pump motor I used
+								is rated at 6V and draws roughly 1A of current at peak. (Beware that Raspberry Pi
+								GPIO pin can only provide a maximum of 16mA <a href="https://www.element14.com/community/thread/20982/l/raspberry-pi-gpio-pin-max-current?displayFullThread=true">[source]</a>.
+								And one should not use the GPIO pin to directly control or power any current consumed heavy component such as a motor.)
+								The 2N2222 NPN BJT transistor is a current
+								controlled current source. To avoid heating up the transistors, two transistors are used instead of
+								one. GPIO 19 and GPIO 26 of the Raspberry Pi are connected to the two transistors respectively with 330 ohm resistors in
+								between to limit the input current flow to base to be 3.3V/330 ohm = 10mA (Raspberry Pi GPIO pins are 3.3V).
+								Based on the <a href="http://web.mit.edu/6.101/www/reference/2N2222A.pdf">datasheet</a>, at room temperature (~25°C),
+								DC current gain of 2N2222 is at least 60 for standard application where I_C < 500mA. This means the motor
+								driver circuit supports total current drawn of at least 60*10mA*2 = 1.2A, which is greater than the 1A peak
+								current drawn of the air pump motor. The 1N4001 diode is used as a flyback diode to protect the transistor
+								from motor voltage spikes and back EMF. Two capacitors are used as decoupling capacitors to protect the
+								Raspberry Pi from reboot due to motor’s sudden current draw. The full circuit diagram is created with Fritzing
+								and is shown to the right. (A LED is added so that a flashing LED tells that the system is running fine.)</p>
+							<br/>
+							<p>The software control code is shown below and can be found at <a href="https://github.com/xitanggg/Plant-Watering-Device">this link.</a></p>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #888888"># water_plant.py uses GPIO 19 and 26 to turn on transistors,</span>
+<span style="color: #888888"># which turn on the air pump motor to water the plant every</span>
+<span style="color: #888888"># 1.5 days.</span>
+<span style="color: #888888"># Xitang - 12/20/2018</span>
+
+<span style="color: #888888"># Import GPIO library and time library</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">RPi.GPIO</span> <span style="color: #008800; font-weight: bold">as</span> <span style="color: #0e84b5; font-weight: bold">GPIO</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">time</span>
+
+GPIO<span style="color: #333333">.</span>setmode(GPIO<span style="color: #333333">.</span>BCM) <span style="color: #888888"># Set GPIO Pins to be referred in Broadcom SOC channel</span>
+
+<span style="color: #888888"># Set up Transistor Control GPIO Pins</span>
+GPIO<span style="color: #333333">.</span>setup(<span style="color: #0000DD; font-weight: bold">19</span>, GPIO<span style="color: #333333">.</span>OUT)
+GPIO<span style="color: #333333">.</span>setup(<span style="color: #0000DD; font-weight: bold">26</span>, GPIO<span style="color: #333333">.</span>OUT)
+<span style="color: #888888"># Set up LED Debug GPIO Pin</span>
+GPIO<span style="color: #333333">.</span>setup(<span style="color: #0000DD; font-weight: bold">13</span>, GPIO<span style="color: #333333">.</span>OUT)
+<span style="color: #888888"># Set up Exit GPIO Pin</span>
+GPIO<span style="color: #333333">.</span>setup(<span style="color: #0000DD; font-weight: bold">17</span>, GPIO<span style="color: #333333">.</span>IN, pull_up_down<span style="color: #333333">=</span>GPIO<span style="color: #333333">.</span>PUD_UP)
+
+<span style="color: #888888"># Turn on the air pump motor for 2 seconds to water plant</span>
+GPIO<span style="color: #333333">.</span>output(<span style="color: #0000DD; font-weight: bold">19</span>, GPIO<span style="color: #333333">.</span>HIGH)
+GPIO<span style="color: #333333">.</span>output(<span style="color: #0000DD; font-weight: bold">26</span>, GPIO<span style="color: #333333">.</span>HIGH)
+time<span style="color: #333333">.</span>sleep(<span style="color: #0000DD; font-weight: bold">2</span>)
+GPIO<span style="color: #333333">.</span>output(<span style="color: #0000DD; font-weight: bold">19</span>, GPIO<span style="color: #333333">.</span>LOW)
+GPIO<span style="color: #333333">.</span>output(<span style="color: #0000DD; font-weight: bold">26</span>, GPIO<span style="color: #333333">.</span>LOW)
+
+<span style="color: #888888"># Initialize variables</span>
+water_interval_sec <span style="color: #333333">=</span> <span style="color: #6600EE; font-weight: bold">1.5</span> <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">24</span> <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">60</span> <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">60</span> <span style="color: #888888"># 1.5 days</span>
+start_time <span style="color: #333333">=</span> time<span style="color: #333333">.</span>time()
+counter <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+
+<span style="color: #008800; font-weight: bold">while</span> <span style="color: #007020">True</span>:
+	<span style="color: #888888"># If exit button is pressed, reset used GPIOs as inputs and exit</span>
+	<span style="color: #008800; font-weight: bold">if</span> (<span style="color: #000000; font-weight: bold">not</span> GPIO<span style="color: #333333">.</span>input(<span style="color: #0000DD; font-weight: bold">17</span>)):
+		GPIO<span style="color: #333333">.</span>cleanup()
+		<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;Exit Program&quot;</span>)
+		<span style="color: #008800; font-weight: bold">break</span>
+	<span style="color: #888888"># Water the plant every 1.5 days</span>
+	<span style="color: #008800; font-weight: bold">if</span> ((time<span style="color: #333333">.</span>time() <span style="color: #333333">-</span> start_time) <span style="color: #333333">&gt;</span> water_interval_sec):
+		start_time <span style="color: #333333">=</span> time<span style="color: #333333">.</span>time()
+		counter <span style="color: #333333">=</span> counter <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>
+		<span style="color: #008800; font-weight: bold">print</span> (counter)
+		GPIO<span style="color: #333333">.</span>output(<span style="color: #0000DD; font-weight: bold">19</span>, GPIO<span style="color: #333333">.</span>HIGH)
+		GPIO<span style="color: #333333">.</span>output(<span style="color: #0000DD; font-weight: bold">26</span>, GPIO<span style="color: #333333">.</span>HIGH)
+		time<span style="color: #333333">.</span>sleep(<span style="color: #0000DD; font-weight: bold">2</span>)
+		GPIO<span style="color: #333333">.</span>output(<span style="color: #0000DD; font-weight: bold">19</span>, GPIO<span style="color: #333333">.</span>LOW)
+		GPIO<span style="color: #333333">.</span>output(<span style="color: #0000DD; font-weight: bold">26</span>, GPIO<span style="color: #333333">.</span>LOW)
+		<span style="color: #008800; font-weight: bold">print</span> (<span style="background-color: #fff0f0">&quot;done&quot;</span>)
+	<span style="color: #888888"># Flash debug LED every 5 seconds</span>
+	time<span style="color: #333333">.</span>sleep(<span style="color: #0000DD; font-weight: bold">4</span>)
+	GPIO<span style="color: #333333">.</span>output(<span style="color: #0000DD; font-weight: bold">13</span>, GPIO<span style="color: #333333">.</span>HIGH)
+	time<span style="color: #333333">.</span>sleep(<span style="color: #0000DD; font-weight: bold">1</span>)
+	GPIO<span style="color: #333333">.</span>output(<span style="color: #0000DD; font-weight: bold">13</span>, GPIO<span style="color: #333333">.</span>LOW)
+</pre></td></tr></table></div>
+
+							<br/>
+							<p class="biao-ti">Result and Reflection</p>
+							<p>When I got back from winter break, the debugged LED was still blinking, so I knew the system was still
+								running correctly. I saw that the water tank was half-empty, which meant that the Plant Watering Device
+								had been watering our house plant when we were out.</p>
+							<br/>
+							<p>One issue with the device was that it was an open loop design and lacked feedback of the water moisture
+								level of the plant. Ideally, we would want this device to operate whenever the moisture level goes below
+								a threshold instead of hardcoding a constant 2s motor operating time to run every 1.5 days. In fact,
+								hardcoding a constant 2s motor operating time would fail to work after a certain point, because as more
+								water got pumped out of the water tank, it required more air to pump the remaining water. A workaround
+								is to add 0.3s to the motor operating time each time the device performed watering. Still, a better approach
+								is to include feedback.</p>
+							<br/>
+							<p>The laser cutted Plant Frame worked fine but wasn’t super sturdy, mainly because the connection between
+								the top part and the left/right part wasn’t super strong. A more sturdy design can be made if a stronger
+								connection was designed. I also added a camera on the left part initially and thought about streaming
+								video online to monitor the plant remotely, but Canada can’t wait and I decided to head out for goods.
+								Overall, I was satisfied with what was accomplished at one night to get our cute house plant taken care of during winter break.</p>
+							<br/>
+							<p class="biao-ti">Reference</p>
+							<ul>
+								<li><a href="https://grabcad.com/library/20-liter-water-bottle-1">CAD file - Water Tank</a></li>
+								<li><a href="https://grabcad.com/library/pot-39">CAD file - Plant</a></li>
+								<li><a href="https://grabcad.com/library/raspberry-pi-3-model-b-2">CAD file - Raspberry Pi 3 Model B+</a></li>
+								<li><a href="https://www.youtube.com/watch?v=k0ERi0Bt8Gk">Youtube - How to Make Coca Cola Soda Fountain Machine</a></li>
+							</ul>
+							<br/>
+							<p class="typewrite">
+								<a class="typewrite" data-period="2000" data-type='
+								[
+								"There is always a better way to do things.",
+								"I feel mad excited to accelerate our world toward a happier tomorrow.",
+								"Accessible empowerment is the future.",
+								"I am truly grateful for everything I have.",
+								"Let us move faster.",
+								"I live in the field of product innovation, design, development and deployment." ]'>
+								</a>
+							</p>
+						</div>
+
+
+					</div>
+
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="inner">
+								<ul class="copyright">
+									<li>&copy; Xitang. No rights reserved</li><li>Design framework based off <a href="http://html5up.net">HTML5 UP</a></li>
+								</ul>
+
+							</div>
+						</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<!-- script borrow from GEOFF GRAHAM
+			https://css-tricks.com/snippets/css/typewriter-effect/-->
+			<script>
+				var TxtType = function(el, toRotate, period) {
+					this.toRotate = toRotate;
+					this.el = el;
+					this.loopNum = 0;
+					this.period = parseInt(period, 10) || 2000;
+					this.txt = '';
+					this.tick();
+					this.isDeleting = false;
+				};
+
+				TxtType.prototype.tick = function() {
+					var i = this.loopNum % this.toRotate.length;
+					var fullTxt = this.toRotate[i];
+
+					if (this.isDeleting) {
+					this.txt = fullTxt.substring(0, this.txt.length - 1);
+					} else {
+					this.txt = fullTxt.substring(0, this.txt.length + 1);
+					}
+
+					this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+					var that = this;
+					var delta = 200 - Math.random() * 100;
+
+					if (this.isDeleting) { delta /= 2; }
+
+					if (!this.isDeleting && this.txt === fullTxt) {
+					delta = this.period;
+					this.isDeleting = true;
+					} else if (this.isDeleting && this.txt === '') {
+					this.isDeleting = false;
+					this.loopNum++;
+					delta = 500;
+					}
+
+					setTimeout(function() {
+					that.tick();
+					}, delta);
+				};
+				window.onload = function() {
+						var elements = document.getElementsByClassName('typewrite');
+						for (var i=0; i<elements.length; i++) {
+								var toRotate = elements[i].getAttribute('data-type');
+								var period = elements[i].getAttribute('data-period');
+								if (toRotate) {
+									new TxtType(elements[i], JSON.parse(toRotate), period);
+								}
+						}
+						// INJECT CSS
+						var css = document.createElement("style");
+						css.type = "text/css";
+						css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+						document.body.appendChild(css);
+				};
+			</script>
+	</body>
+</html>

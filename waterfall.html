@@ -56,15 +56,87 @@
 					<div id="main">
 						<div class="inner">
 							<h3>Beautiful Interactive Waterfall</h3>
-							<ul>
-								<li>I made a Beautiful Interactive Waterfall with my lab partner Henry for final project of ECE 4760
-									“Digital Systems Design Using Microcontrollers” in Fall 2017.</li>
-								<li>The description of this page is still under development, please check back other time. Thanks.</li>
-								<li>More information can be found in the project final report website:
-									<a href="https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/xz522_ll772/xz522_ll772/xz522_ll772/index.html">Link Click Here</a>.</li>
-							</ul>
+							<p class="biao-ti">Background</p>
+							<p>I took <a href="http://people.ece.cornell.edu/land/courses/ece4760/">Prof. Bruce Land’s iconic “ECE 4760 Digital Systems Design Using Microcontrollers”</a> in Fall 2017.
+								For the last 4-5 weeks of class, students worked on a final project on any topic they choose to pursue.
+								My lab partner <a href="https://www.linkedin.com/in/henrylee9501">Liheng</a>
+								and I wanted to work on an interdisciplinary project and came across water curtain
+								when we were surfing the internet. <a href="https://www.youtube.com/watch?v=v_oYLc75k7U">Water curtain combines water, gravity physics, mechanical structure
+								and electronics control to create beautiful artistic effects, letters, graphics…</a> </p>
+							<br/>
+							<p>Most water curtains we found online were super large (at least 4m height x 4m width),
+								very expensive (at least thousands dollars) and therefore limited for high end shows and events. There were
+								a few attempts to create smaller versions of water curtains. Some failed miserably. Some succeeded but
+								had almost zero documentations of their works. We took the initiative to create an innovative open
+								sourced mini waterfall design that follows the three design specifications: 1. Interactable, 2. Modularity
+								and 3. Replicability. </p>
+							<br/>
+							<p>The below video was filmed by Prof. Land during our final project demo where we gave an quick overview
+								of the waterfall and interacted the waterfall with an App. There are 3 modes in the App. In Play Mode,
+								users can direct control the waterfall in real time and play with it. In Program Mode, users can draw
+								patterns or letters on a square arrays sketch pad and display them on the waterfall, e.g. waterfalling
+								letters such as “C”, “U”. In Enjoy Mode, there is a soothing 1 minute waterfall show for user to enjoy.
+							</p>
 
 							<div style="position:relative;height:0;padding-bottom:48%"><iframe src="https://www.youtube.com/embed/1HuUkSpbhO0?list=PLKcjQ_UFkrd7JYi9yO2zcU4sMUj3x_pOL&amp;ecver=2" style="position:absolute;width:100%;height:100%;left:0" width="750" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+
+							<br/>
+							<p class="biao-ti">Design and Development</p>
+							<p>The design and development of this project (mechanical, hardware, software) can be found in our final report website:
+								<a href="https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/xz522_ll772/xz522_ll772/xz522_ll772/index.html">Link Click Here</a>.</p>
+
+							<br/>
+							<p class="biao-ti">Result and Reflection</p>
+							<p><span class="image right"><img src="images/waterfall/bruce4760.png" alt="" /></span>
+								We successfully created a modular portable mini waterfall design, with easily
+								customizable mechanical parts obtained in accessible vendor like Home Depot and Target.
+								And the App were able to perform the three modes we set forth to interact with the waterfall.
+							</p>
+							<br/>
+							<p>
+								Bruce has been teaching ECE 4760 in Cornell for about 20 years. There had been two previous
+								water related final projects and both didn’t end well (in fact, one exploded in lab according
+								to Bruce). Bruce commented “very impressive” to our project at the end of the demo video.
+								We were mad happy that we integrated electronics with water nicely and was able to
+								impress Bruce that electronics and water can indeed be friends with good engineering effort.
+							</p>
+							<br/>
+							<p>
+								Still, there is a problem with our design that we ran out of time to address, which is the fact
+								that our design only has 3 bit vertical display resolution. Our design’s height is about 0.5m.
+								Using the physics free fall equation h = ½ * g * t^2, where h is 0.5m and g is 9.8m/s^2, we can
+								compute that it takes water 0.319s to fall before reaching the floor. Due to budget limit of our
+								final project (<$125), we purchased cheap solenoid valves that charge and discharge rather slowly
+								~0.1s. Therefore, our design only has about 3 bit vertical display resolution (0.319s / 0.1s ≈ 3).
+								It displays complex patterns and letters in a twisted and blurred manner, but it displays simple
+								pattern and letter such as C and U nicely. There are two ways to address this problem. The first option
+								is to increase the height of the design. If the height is increased by four times, the design
+								would have 6 bit vertical display resolution. The second option is to get better solenoid valves
+								that switch on/off faster. If using solenoid valves that charge and discharge ~0.05s, the design
+								would also have 6 bit vertical display resolution. One should aim for at least 8 bit vertical display
+								resolution to display meaningful patterns.
+							</p>
+
+							<br/>
+							<p class="biao-ti">ECE4760 Sample Labs (Not Part of the Project)</p>
+							<p>We completed a few labs throughout the semester for ECE 4760. Below are video demos of the
+								three labs we have done. The left is a Ball Bouncing Video Game that we made on a TFT display.
+								Player has to control a paddle to bounce balls into collectors to get points and player loses
+								points if the balls get past the paddle. The middle is a One Arm Hovering ‘Helicopter’ that
+								flies to user specified angles (e.g. 0°, 30°, -30°, 0°) using PID algorithms to minimize
+								overshoot. User can also direct controls it in real time. The right is a Cricket Chirp Generator
+								that produces audio output of a simplified cricket chirp based on parameters user enters.</p>
+							<div style="position:relative;height:0;padding-bottom:20%">
+								<iframe src="https://drive.google.com/file/d/1wPqs-CbdhpehxNKTSriK6BonKOkWSXg6/preview" style="position:absolute;width:31%;height:95%;left:0" width="641" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+								<iframe src="https://drive.google.com/file/d/16CI4Ddaj-8b7HVv61L7Y_94MA4aZa_K3/preview" style="position:absolute;width:31%;height:95%;left:33%" width="641" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+								<iframe src="https://drive.google.com/file/d/1n7kCfY_xewai7supGi2LzUEsQWPaZicN/preview" style="position:absolute;width:31%;height:95%;left:66%" width="641" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+							</div>
+
+							<p>P.S. - Prof. Land (students generally go by Bruce because of his approachability) is among my list
+								of favorite professors in Cornell. Bruce is always in lab to help students and in his office
+								to share his thoughts if any student needs advices, whether personal or technical. They are the
+								people that define Cornell ECE. Taking Bruce’s ECE 4760 taught me that “Cornell <B>E</B>CEs <B>C</B>an do <B>E</B>verything”!
+							</p>
 							<br/><br/>
 							<p class="typewrite">
 								<a class="typewrite" data-period="2000" data-type='
