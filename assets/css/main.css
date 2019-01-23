@@ -2790,7 +2790,7 @@
 			}
 
 			.tiles article.style5{
-				background: url(../../images/jaundice.jpg);
+				background: url(../../images/jaundice.png);
 				background-size: cover; background-position: center;
 				border-radius:10px;
 			}
@@ -2861,7 +2861,7 @@
 				-moz-transform: scale(1.1);-webkit-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);
 			}
 			.tiles article.style5:hover{
-				background: url(../../images/jaundice.gif);
+				background: url(../../images/jaundice.jpg);
 				background-size: cover; background-position: center;
 				-moz-transform: scale(1.1);-webkit-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);
 			}
@@ -3509,8 +3509,6 @@
 		margin: 0 auto;
 		padding: 0 2.5em;
 	}
-
-
 
 		@media screen and (max-width: 480px) {
 			#wrapper > * > .inner {
