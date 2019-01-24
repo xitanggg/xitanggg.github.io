@@ -2814,7 +2814,7 @@
 			}
 
 			.tiles article.style9{
-				background: url(../../images/plate.jpg);
+				background: url(../../images/plate.png);
 				background-size: cover; background-position: center;
 				border-radius:10px;
 			}
@@ -2881,7 +2881,7 @@
 				-moz-transform: scale(1.1);-webkit-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);
 			}
 			.tiles article.style9:hover{
-				background: url(../../images/plate.gif);
+				background: url(../../images/plate.jpg);
 				background-size: cover; background-position: center;
 				-moz-transform: scale(1.1);-webkit-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);
 			}
