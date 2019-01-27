@@ -56,24 +56,31 @@
 					<div id="main">
 						<div class="inner">
 							<h3>Autonomous Object Tracking Turret</h3>
-							<ul>
-								<li>I made an Autonomous Object Tracking Turret with my lab partner Francis for final project of ECE 5725
-									"Design with Embedded Operating Systems" in Spring 2018.</li>
-								<li>The turret is able to locate blue objects in real time and autonomously track it with two degree
-									freedom of motion (rotation and tilt). It can also be remotely controlled to emit a laser beam and
-									to fire a rubber band at the target.</li>
-								<li>The turret contains a Raspberry Pi (a small Linux computer with 1.4GHz 64-bit quad-core processor),
-									 a camera module (used to capture video in real time), a servo pan tilt (used for two degree freedom:
-									 rotation and tilt), and a laser, rubber band fire mechanism (used to shoot the target at remote control).</li>
-								<li>I wrote the object recognition algorithm and multi processing algorithm for the turret in Python.
-									The object recognition algorithm is coded using the OpenCV library. It detects the largest blue object
-									viewed on camera and extracts its center position, which is used as feedback for the servo pan tilt tracking.
-									The multi processing algorithm enables the use of all four processor cores in the Raspberry Pi to perform object
-									recognition. This brings down the average time of object recognition from 120ms/frame to 50ms/frame with 58%
-									time improvement.</li>
-								<li>More information can be found in the project final report website:
+							<p class="biao-ti">Overview</p>
+							<p>I took <a href="http://skovira.ece.cornell.edu/ece5725/">Joe Skovira’s iconic class “ECE 5725 Design with Embedded Operating Systems”</a>
+								in Spring 2018, a class on
+								learning and using Raspberry Pi microprocessor and embedded Linux. For the last 4-5 weeks of class, students
+								worked on a final project on any topic they choose to pursue. My lab partner <a href="https://www.linkedin.com/in/francis-yu-cornell">Francis</a> and I wanted to work on
+								a project that utilized computer vision and robotics, so we decided to build an Autonomous Object Tracking
+								Turret.</p>
+							<br/>
+							<p>Our turret is able to locate blue objects in real time and autonomously track it with two degree freedom of
+								motion (rotation and tilt). It can also be remotely controlled to emit a laser beam and to fire a rubber band
+								at the target.</p>
+							<br/>
+							<p>I wrote an object recognition algorithm and a multi processing algorithm for the turret in Python.
+								The object recognition algorithm is coded using the OpenCV library. It detects the largest blue object
+								viewed on camera and extracts its center position, which is used as feedback for the servo pan tilt
+								tracking. The multi processing algorithm enables the use of all four processor cores in the Raspberry
+								Pi to perform object recognition. This brings down the average time of object recognition from 120ms/frame
+								to 50ms/frame with 58% time improvement.</p>
+							<br/>
+							<p>
+								More information of this project can be found in our final report website:
 									<a href="https://courses.ece.cornell.edu/ece5990/ECE5725_Spring2018_Projects/fy57_xz522_AutoTurret/index.html">Link Click Here</a>.</li>
-							</ul>
+							</p><br/>
+
+							<p class="biao-ti">Video Demo</p>
 							<div style="position:relative;height:0;padding-bottom:56.21%"><iframe src="https://www.youtube.com/embed/F5a6-c8bb20?ecver=2" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
 							<br/><br/>
 							<p class="typewrite">
