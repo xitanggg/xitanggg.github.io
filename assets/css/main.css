@@ -2924,6 +2924,34 @@
 				background-size: cover; background-position: center;
 				-moz-transform: scale(1.1);-webkit-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);
 			}
+			/*Add Article*/
+			.tiles article.style-entrepreneurship img{
+				opacity: 0;
+			}
+			.tiles article.style-entrepreneurship{
+				background: url(../../images/entrepreneurship.png);
+				background-size: cover; background-position: center;
+				border-radius:10px;
+			}
+			.tiles article.style-entrepreneurship:hover{
+				background: url(../../images/entrepreneurship.png);
+				background-size: cover; background-position: center;
+				-moz-transform: scale(1.1);-webkit-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);
+			}
+			/*Add Article*/
+			.tiles article.style-microteaching img{
+				opacity: 0;
+			}
+			.tiles article.style-microteaching{
+				background: url(../../images/microteaching.png);
+				background-size: cover; background-position: center;
+				border-radius:10px;
+			}
+			.tiles article.style-microteaching:hover{
+				background: url(../../images/microteaching.png);
+				background-size: cover; background-position: center;
+				-moz-transform: scale(1.1);-webkit-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);
+			}
 
 				body:not(.is-touch) .tiles article:hover > .image:before {
 
